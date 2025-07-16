@@ -10,7 +10,8 @@ Input: a = 10, b = 10
 Output: a = 10, b = 10 
 '''
 
-''' MY SOLUTION
+#MY SOLUTION
+''' 
 USER INPUT
 input_a = int(input("Enter integer input a = "))
 input_b = int(input("Enter integer input b = "))
@@ -31,8 +32,8 @@ if __name__ == "__main__":
 swap(input_a, input_b)
 '''
 
-'''
 # [NAIVE APPROACH] USING THIRD VARIABLE
+'''
 if __name__ == "__main__":
     a = 2
     b = 3
@@ -43,6 +44,7 @@ if __name__ == "__main__":
     b = temp
     print(f"Swapped Output using temp variable: a = {a}, b = {b}")
 '''
+
 # SWAPPING WITHOUT USING 3RD VARIABLE
 ''' #ARITHEMTIC APPROACH
 input_a = int(input("Enter input a: "))
@@ -81,8 +83,9 @@ if __name__ == "__main__":
 
     print(f"Swapped Output: a = {a}, b = {b}")
 
-'''
+
 # [ALTERNATE APPROACH] BUILT IN SWAP
+'''
 if __name__ == "__main__":
     a = 2
     b = 3
