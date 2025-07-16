@@ -63,6 +63,23 @@ swap_with_third_variable(input_a, input_b)
 '''
 
 # USING BITWISE XOR OPERATOR
+# BITWISE OPERATOR COMPARES CORRESONDING BITS OF TWO OPERANDS
+# IF BITS ARE DIFFERENT THE RESULT IS 1; IT'S 0
+if __name__ == "__main__":
+    a = 2 # 0010
+    b = 3 # 0011
+    print(f"Unswapped Output: a = {a}, b = {b}")
+
+    a = a ^ b   #Comparing 0010 with 0011
+    print(f"a = {a}, b = {b}") #Should print a = 0001, b = 0011
+
+    b = a ^ b   #Comparing 0001 with 0011
+    print(f"a = {a}, b = {b}") #Should print a = 0001, b = 0010
+
+    a = a ^ b   #Comparing 0001 with 0010
+    print(f"a = {a}, b = {b}") #Should print a = 0011, 0010
+
+    print(f"Swapped Output: a = {a}, b = {b}")
 
 '''
 # [ALTERNATE APPROACH] BUILT IN SWAP
