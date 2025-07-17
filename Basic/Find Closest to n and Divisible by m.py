@@ -16,12 +16,19 @@ Output: -18
 Explanation: Both -12 and -18 are closest to -15, 
 but -18 has the maximum absolute value.
 '''
-#MY SOLUTION
 '''
+#MY SOLUTION
+
 def find_closest_to_n_divisible_by_m(n, m):
     list_lesser_n= []
     list_greater_n = []
-    
+
+    #Fix for index error when n is already divisible by m
+    if n % m == 0:
+        print(f"{n} is divisible by {m}")
+        print(f"Output: {n} ")
+        return
+
     n_less = n
     while n_less % m != 0:
         list_lesser_n.append(n_less-1)
@@ -47,9 +54,9 @@ def return_closest_numbers(list_lesser, list_greater):
         right_pos_num = abs(list_greater[-1])
 
         if left_pos_num < right_pos_num:
-            print(right_pos_num)
+            print(list_greater[-1])
         else:
-            print(left_pos_num)
+            print(list_lesser[-1])
 
     else: # printer greater number divisble by m
         print(list_greater[-1])
