@@ -70,6 +70,7 @@ if __name__ == "__main__":
 '''
 
 #Iterative approach
+'''
 def closest_number(n, m):
 
     closest = 0 
@@ -90,3 +91,29 @@ if __name__ == "__main__":
     n = 13
     m = 4
     print(closest_number(n, m))
+'''
+
+#Expected approach
+def closestNumber(n, m) :
+    #get quotient
+    q = int(n/m)
+
+    #closest multiple of m that is less than or = to n.
+    n1 = m * q #Dividend * quotient
+
+    # 2nd possible closest number
+    if((n*m) > 0):
+        n2 = (m * (q + 1))
+    else:
+        n2 = (m * (q - 1))
+
+    #If true, then n1 is the required closest number
+    if (abs(n - n1)) < abs(n - n2) :
+        return n1
+    
+    #Else n2 is the closest number
+    return n2
+
+if __name__ == "__main__":
+    n = 16; m =4
+    print(closestNumber(n,m))
