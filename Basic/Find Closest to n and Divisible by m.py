@@ -16,9 +16,9 @@ Output: -18
 Explanation: Both -12 and -18 are closest to -15, 
 but -18 has the maximum absolute value.
 '''
-'''
-#MY SOLUTION
 
+#MY SOLUTION
+'''
 def find_closest_to_n_divisible_by_m(n, m):
     list_lesser_n= []
     list_greater_n = []
@@ -69,3 +69,24 @@ if __name__ == "__main__":
     find_closest_to_n_divisible_by_m(n, m)
 '''
 
+#Iterative approach
+def closest_number(n, m):
+
+    closest = 0 
+    min_difference = float('inf') # comparing using positive infinity
+
+    #Checking numbers around n
+    for i in range (n - abs(m), n + abs(m) + 1):
+
+        if i % m == 0:
+            difference = abs(n - i)
+
+            if difference < min_difference or (difference == min_difference and abs(i) > abs(closest)):
+                closest = i
+                min_difference = difference 
+    return closest
+
+if __name__ == "__main__":
+    n = 13
+    m = 4
+    print(closest_number(n, m))
