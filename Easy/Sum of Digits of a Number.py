@@ -90,3 +90,19 @@ def sumOfDigits(n):
                                         # 3         +   sumOfDigits(123) and so on
 print(sumOfDigits(12345))
 '''
+
+# Geeks String Conversion approach:
+
+def sumOfDigits(n):
+    # Convert number to str
+    s = str(n)
+    sum = 0
+
+    # Loop through char in str, convert to digit, anf += to sum
+    for ch in s:
+        sum += int(ch)
+
+    return sum
+
+n = 54321
+print(sumOfDigits(n))
