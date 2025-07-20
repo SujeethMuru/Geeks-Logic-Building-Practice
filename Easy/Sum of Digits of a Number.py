@@ -73,5 +73,20 @@ if __name__ == "__main__":
     print(sumOfDigits(n)) #Output should equal 15
 '''
 
+# Approach 2: Recursive method - Function calls itself
 
-
+'''
+def sumOfDigits(n):
+    # Base Case
+    if n == 0 :
+        return 0
+    
+    #Recursive Case
+    return n % 10 + sumOfDigits(n // 10)
+        #Self Notes
+        # 12345 % 10 + sumOfDigits(12345 // 10)
+            # 5      + sumOfDigits(1234)
+                        # 4     +   sumOfDigits(1234)
+                                        # 3         +   sumOfDigits(123) and so on
+print(sumOfDigits(12345))
+'''
