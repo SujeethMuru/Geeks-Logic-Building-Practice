@@ -20,7 +20,7 @@ Use range function
 '''
 
 #Failed Attempt: Loop through num
-"""
+'''
 def sumOfDigits(num):
     sum = 0
     for n in num:
@@ -32,9 +32,10 @@ def sumOfDigits(num):
 if __name__ == "__main__":
     n = 687
     print("Output: ", sumOfDigits(n))   #Output should equal 21
-"""
+'''
 
-# Idea after looking up how to iterate using ints
+# My Working Solution: Idea after looking up how to iterate using ints
+'''
 def sumOfDigits(num):
     sum = 0
     for digit in str(num):
@@ -49,3 +50,28 @@ if __name__ == "__main__":
 
     n = 12
     print("Output:", sumOfDigits(n))   #Output should equal 3
+'''
+
+# Digit Extraction Approach
+'''
+def sumOfDigits(n):
+    sum = 0 
+    while n != 0:
+
+        #extract last digit
+        last = n % 10
+
+        #add last digit
+        sum += last
+
+        #remove last digit
+        n //= 10
+    return sum
+
+if __name__ == "__main__":
+    n = 12345
+    print(sumOfDigits(n)) #Output should equal 15
+'''
+
+
+
