@@ -35,6 +35,7 @@ def reverseDigits(num):
 print(reverseDigits(122))
 '''
 #My Solution: Digit extraction 
+'''
 def reverseDigits(num):
     reversed_digits = 0
     if num >= 0:
@@ -67,7 +68,35 @@ def reverseDigits(num):
         return reversed_digits * -1
 
 print(reverseDigits(-12345))
+'''
 
+#My Solution: Digital extraction simplified
+def reverseDigits(num):
+    absolutle_num = abs(num)
+    reversed_digits = 0
+
+    while absolutle_num != 0:
+
+        #Last digit extracition
+        last_digit = absolutle_num % 10
+
+        #Reversing digit : Got aid from ai for this formula
+        reversed_digits = reversed_digits * 10 + last_digit
+        
+        #Last digit removal
+        absolutle_num //= 10
+
+    #More simplified if else
+    return reversed_digits if num >= 0 else -reversed_digits
+
+    '''
+    if num >= 0:
+        return reversed_digits
+    else:
+        return reversed_digits * -1
+    '''
+
+print(reverseDigits(-12345))
 
 
 
