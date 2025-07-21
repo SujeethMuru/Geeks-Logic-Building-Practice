@@ -20,20 +20,22 @@ int to string conversion. Concatenate string then return int.
 Digit extraction
 '''
 # My Soultion: String conversion 
-'''
 def reverseDigits(num):
     string_num = str(num)
     reverse_num = []
-    for n in string_num:
+
+    while string_num != "":
         reverse_num.append(string_num[-1])
-        print(reverse_num)
-        string_num.replace(string_num[-1], "")
+        string_num = string_num[:-1]
         print(reverse_num)
 
+    reverse_num = "".join(reverse_num)
+    reverse_num = int(reverse_num)
     return reverse_num            
 
-print(reverseDigits(122))
-'''
+print(reverseDigits(221))
+
+
 #My Solution: Digit extraction 
 '''
 def reverseDigits(num):
@@ -71,6 +73,7 @@ print(reverseDigits(-12345))
 '''
 
 #My Solution: Digital extraction simplified
+'''
 def reverseDigits(num):
     absolutle_num = abs(num)
     reversed_digits = 0
@@ -86,18 +89,11 @@ def reverseDigits(num):
         #Last digit removal
         absolutle_num //= 10
 
-    #More simplified if else
+    #simplified if else
     return reversed_digits if num >= 0 else -reversed_digits
 
-    '''
-    if num >= 0:
-        return reversed_digits
-    else:
-        return reversed_digits * -1
-    '''
-
-print(reverseDigits(-12345))
-
+print(reverseDigits(0))
+'''
 
 
 
