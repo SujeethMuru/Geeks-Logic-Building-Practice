@@ -20,6 +20,7 @@ int to string conversion. Concatenate string then return int.
 Digit extraction
 '''
 # My Soultion: String conversion 
+'''
 def reverseDigits(num):
     string_num = str(num)
     reverse_num = []
@@ -35,6 +36,9 @@ def reverseDigits(num):
 
 print(reverseDigits(221))
 
+#Time Complexity: O((log n)**2)
+#Space Complexity: O(d) or O(log n)
+'''
 
 #My Solution: Digit extraction 
 '''
@@ -92,9 +96,87 @@ def reverseDigits(num):
     #simplified if else
     return reversed_digits if num >= 0 else -reversed_digits
 
-print(reverseDigits(0))
+print(reverseDigits(123))
+
+#Time Complexity: O(log n)
+#Space Complexity: O(1)
 '''
 
+# Geeks Approach: Digit by Digit
+'''
+n = 4562
+rev = 0
 
+while (n > 0):
+    a = n % 10
+    rev = rev * 10 + a
+    n = n // 10
 
-        
+print(rev) #Output was 2654
+
+#Time complexity - O(log n)
+#Space complexity - O(1)
+'''
+#Geeks Recursive Approach
+'''
+def reverseDigits(n, revNum, basePos):
+    if n > 0:
+        reverseDigits(n//10, revNum, basePos)
+        revNum[0] += (n % 10) * basePos[0]
+        basePos[0] *= 10
+
+#Driver code
+n = 4562
+revNum = [0]
+basePos = [1]
+reverseDigits(n, revNum, basePos)
+print(revNum[0])
+
+#Time Complexity: O(log n)
+#Space Complexity: O(log n)
+'''
+
+#Geeks String to list reversal Approach
+'''
+def reverseDigits(n):
+
+    # converted number to string
+    s = str(n)
+
+    # reverse the string
+    s = list(s)
+    s.reverse()
+    s = "".join(s)
+
+    # converting string to interger
+    n = int(s)
+    return n
+
+num = 4562
+print(reverseDigits(num)) 
+
+#Time Complexity O(log n)
+#Space Copmlexity O(1)
+'''
+
+#Geeks String Slicing approach
+'''
+def reverseDigits(n):
+
+    # convert num to int
+    s = str(n)
+    
+    # Reversing string
+    s = s[::-1]
+
+    # convert string to int
+    n = int(s)
+
+    return n
+
+n = 4562
+print(reverseDigits(n))
+
+#Time complexity - O(n)
+#Space complexity - O(n)
+'''
