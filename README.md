@@ -26,7 +26,7 @@ I may also include:
 
 All problem statements and official reference solutiions belong to [GeeksforGeeks](https://www.geeksforgeeks.org/dsa/logic-building-problems/)
 
-This repository is **for educatino purposes only** and is meant to:
+This repository is **for educational purposes only** and is meant to:
 - Track my progress,
 - Reinforce learning, and
 - Help others understand alternate solutions.
