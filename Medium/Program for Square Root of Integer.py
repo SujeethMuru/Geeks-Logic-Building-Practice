@@ -16,16 +16,26 @@ Input: n = 11
 Output: 3
 Explanation: The square root of 11 lies in between 3 and 4 so floor of the square root is 3.
 '''
-
+# My Solution
+'''
 def squareRoot(n):
     if n < 0:
         print("Enter Positive number: ")
     else:
         squareRootedNum = n ** (1/2)
-        print(squareRootedNum)
+
         if squareRootedNum % 2 == 0:
             return int(squareRootedNum)
         else:
             return int(squareRootedNum // 1)
         
+print("Sqaure root: ", squareRoot(16))
+'''
+# My optimized solution:
+def squareRoot(n):
+    if n < 0:
+        print("Enter Positive number: ")
+    else:
+        return int(n ** (1/2))
+
 print("Sqaure root: ", squareRoot(16))
