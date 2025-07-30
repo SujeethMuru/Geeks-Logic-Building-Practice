@@ -21,6 +21,7 @@ Output: False
 '''
 
 #My Iterative Solution: Time O(log y), Space O(1)
+'''
 def powerChecker(x, y):
     num = x
     power = y
@@ -40,6 +41,21 @@ def powerChecker(x, y):
     return True
 
 print(powerChecker(10, 1001))
+'''
+
+# My Logarithmic approach: AI assisted Time O(1), Space O(1)
+
+    # formula log_x(y) = n, n = log_10(y)/log_10(x) or ln(y)/ln(x)
+import math
+def powerChecker(x, y):
+    n = math.log(y)/math.log(x)
+
+    if abs(n - round(n)) < 1e-10:
+        return True
+    
+    return False
+
+print(powerChecker(10, 10001))
 
 
 
