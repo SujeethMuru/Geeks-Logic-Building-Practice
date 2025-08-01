@@ -36,5 +36,25 @@ print(countDivisor(49)) # output = [1, 7, 49, 1, 7, 49]
 # My solution assistance from AI
 #Numbers with exactly 3 divisors are squares of prime numbers
 import math
-def countDivisor(n):
+
+def prime_finder(n): #Reusing prime function from easy problem
+    if n <= 1:
+        return False
     
+    for i in range(2, int(math.sqrt(n) + 1)):
+        if n % i == 0:
+            return False
+    
+    return True
+
+
+def findThreeDivisor(n): #Find all prime numbers and square them
+    divisible_by_three = []
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if prime_finder(i) == True:
+            sqaured = i ** 2
+            divisible_by_three.append(sqaured)
+
+    return divisible_by_three
+
+print(findThreeDivisor(100))
