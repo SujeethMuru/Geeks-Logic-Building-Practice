@@ -17,7 +17,8 @@ Output: false
 Explanation: s does not give 0 as remainder when divided by 11.
 
 '''
-
+# My Solution: Formula
+'''
 def check_11_divisibility(s):
     #edge case 0
     if len(s) == 0:
@@ -50,4 +51,19 @@ s = "7695"
 print(check_11_divisibility(s)) #False
 s = "1234567589333892"
 print(check_11_divisibility(s)) #True
+'''    
+def divBy11(s):
+
+    #Convert string to int
+    n = int(s)
+    return n % 11 == 0
+
+if __name__ == "__main__":
+    s = "76945"
+
+    if divBy11(s):
+        print("True")
+    else:
+        print("False")
+
     
