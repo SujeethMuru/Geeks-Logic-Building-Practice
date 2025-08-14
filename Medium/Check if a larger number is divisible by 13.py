@@ -13,5 +13,28 @@ Input: s = "27"
 Output: false
 Explanation: 27 / 13 ≈ 2.0769..., which is not a whole number (there is a remainder).
 '''
+#My Solution: Modulo operator
+'''
 def divBy13(s):
-    
+    return int(s) % 13 == 0
+
+s = "2911285"
+print(divBy13(s))
+s = "27"
+print(divBy13(s))
+'''
+
+def divBy13(s):
+    n = int(s)
+
+    while n > 99:
+        last_digit = n % 10
+        rest = n // 10
+
+        n = rest + (4*last_digit)
+    return n % 13 == 0
+
+s = "2911285"
+print(divBy13(s))
+s = "27"
+print(divBy13(s))
